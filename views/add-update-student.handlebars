@@ -1,0 +1,11 @@
+<h3>{{ name }} <a class="btn btn-secondary btn-sm" href="/">Home</a></h3>
+<h1>{{#if student}}Update{{else}}Add{{/if}} a Student</h1>
+<form action="/addNewStudent" method="POST">
+  <p>
+    First Name <input class="form-control" type='text' name='firstName' value='{{ student.firstName }}' /><br />
+    Last Name <input class="form-control" type='text' name='lastName' value='{{ student.lastName }}' /><br />
+    Student ID <input class="form-control" type='text' name='studentId' value='{{ student.studentId }}' /><br />
+    <input type='hidden' name='id' value='{{ student._id }}' /> <br/>
+    <button class="btn btn-primary" type="submit">{{#if student}}Update{{else}}Add{{/if}} Student</button>
+  </p>
+</form>

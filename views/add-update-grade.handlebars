@@ -1,0 +1,11 @@
+<h3>{{ name }} <a class="btn btn-secondary btn-sm" href="/">Home</a></h3>
+<h1>{{#if grade}}Update{{else}}Add{{/if}} a Grade</h1>
+<form action="/addNewGrade" method="POST">
+  <p>
+   Student ID <input class="form-control" type='text' name='studentId' value='{{ grade.studentId }}' /><br />
+    Standard Number<input class="form-control" type='text' name='standardName' value='{{ grade.standardName}}' /><br />
+    Score <input class="form-control" type='text' name='grade' value='{{ grade.grade }}' /><br />
+    <input type='hidden' name='id' value='{{ grade._id }}' /> <br/>
+    <button class="btn btn-primary" type="submit">{{#if grade}}Update{{else}}Add{{/if}} Grade</button>
+  </p>
+</form>

@@ -1,0 +1,44 @@
+{{#if flashes}}
+  {{#each flashes}}
+     <div class="alert alert-success">{{ this }}</div>
+  {{/each}}
+{{/if}}
+<h3>{{ name }} <a class="btn btn-secondary btn-sm" href="/logout">log out</a></h3>
+<h1>{{ header }}</h1>
+<p>
+  <a class="btn btn-primary" href="/addStudent">Add Student</a>
+  <a class="btn btn-primary" href="/addStandard">Add Standard</a>
+  <a class="btn btn-primary" href="/addGrade">Add Grade</a>
+</p>
+<table class="table">
+  <tr>
+    <th>Student Name</th>
+    <th>Student ID</th>
+    <th></th>
+  </tr>
+  {{#each students}}
+    <tr class="align-middle"><td>{{ this.firstName }} {{ this.lastName }}</td><td>{{this.studentId}}</td><td><a class="btn btn-primary btn-sm" href="/updatestudent/{{ this._id }}">Edit</a> <a class="btn btn-secondary btn-sm" href="/deletestudent/{{ this._id }}">Delete</a></td></tr>
+  {{/each}}
+</table>
+<table class="table">
+  <tr>
+    <th>Standard Name</th>
+    <th>Standard Number</th>
+    <th>Standard Description</th>
+    <th>Standard ID</th>
+  </tr>
+  {{#each standards}}
+    <tr class="align-middle"><td>{{ this.standardName }}</td>><td>{{ this.standardNumber }}</td><td>{{this.standardDescription}}</td><td>{{this._id}}</td><td><a class="btn btn-primary btn-sm" href="/updatestandard/{{ this._id }}">Edit</a> <a class="btn btn-secondary btn-sm" href="/deletestandard/{{ this._id }}">Delete</a></td></tr>
+  {{/each}}
+</table>
+<table class="table">
+  <tr>
+    <th>Student ID</th>
+    <th>Standard Name</th>
+    <th>Grade</th>
+  </tr>
+  {{#each grades}}
+    <tr class="align-middle"><td>{{ this.studentId }}</td><td>{{ this.standardName }}</td><td>{{this.grade}}</td><td><a class="btn btn-primary btn-sm" href="/updategrade/{{ this._id }}">Edit</a> <a class="btn btn-secondary btn-sm" href="/deletegrade/{{ this._id }}">Delete</a></td></tr>
+  {{/each}}
+</table>
+<!-- Future HTML/Handlebars for rendering our student list -->

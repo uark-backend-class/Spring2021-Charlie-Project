@@ -1,0 +1,11 @@
+<h3>{{ name }} <a class="btn btn-secondary btn-sm" href="/">Home</a></h3>
+<h1>{{#if standard}}Update{{else}}Add{{/if}} a Standard</h1>
+<form action="/addNewStandard" method="POST">
+  <p>
+    Standard Name <input class="form-control" type='text' name='standardName' value='{{ standard.standardName }}' /><br />
+    Standard Number <input class="form-control" type='text' name='standardNumber' value='{{ standard.standardNumber }}' /><br />
+    Standard Description <input class="form-control" type='text' name='standardDescription' value='{{ standard.standardDescription }}' /><br />
+    <input type='hidden' name='id' value='{{ standard._id }}' /> <br/>
+    <button class="btn btn-primary" type="submit">{{#if standard}}Update{{else}}Add{{/if}} Standard</button>
+  </p>
+</form>
